@@ -1,0 +1,73 @@
+{
+ "data": [
+  {
+   "id": 90209,
+   "tournament": "Cincinnati Open",
+   "tour": "atp",
+   "tournament_id": "cincinnati-2026",
+   "surface": "hard",
+   "indoor": false,
+   "format": "BO3",
+   "round": "Round of 32",
+   "round_code": "R32",
+   "status": "completed",
+   "event_status": "Retired",
+   "is_doubles": false,
+   "draw": "singles",
+   "scheduled_time": "2026-08-17T16:00:00Z",
+   "players": {
+    "p1": {
+     "id": 50601,
+     "name": "Tommy Paul",
+     "tour": "atp",
+     "country": "usa",
+     "ranking": 12,
+     "ranking_points": null,
+     "ranking_movement": null,
+     "hand": null,
+     "backhand": null,
+     "birthday": null,
+     "is_doubles_team": false
+    },
+    "p2": {
+     "id": 50602,
+     "name": "Adolfo Vallejo",
+     "tour": "atp",
+     "country": "par",
+     "ranking": 480,
+     "ranking_points": null,
+     "ranking_movement": null,
+     "hand": null,
+     "backhand": null,
+     "birthday": null,
+     "is_doubles_team": false
+    }
+   },
+   "score": {
+    "sets": [
+     1,
+     0
+    ],
+    "games": [],
+    "points": [
+     null,
+     null
+    ],
+    "server": null,
+    "is_tiebreak": false,
+    "win_probability_p1": null,
+    "danger": null,
+    "timestamp": null
+   },
+   "winner": 1,
+   "withdrew": 2
+  }
+ ],
+ "meta": {
+  "limit": 50,
+  "offset": 0,
+  "count": 1,
+  "total": 1,
+  "has_more": false
+ }
+}

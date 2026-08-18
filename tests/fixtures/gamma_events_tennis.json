@@ -1,0 +1,581 @@
+[
+ {
+  "id": "857577",
+  "slug": "atp-lehecka-fils-2026-08-17",
+  "title": "Cincinnati Open: Jiri Lehecka vs Arthur Fils",
+  "startDate": "2026-08-16T05:05:18Z",
+  "endDate": "2026-08-24T14:00:00Z",
+  "active": true,
+  "closed": false,
+  "live": true,
+  "tags": [
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   },
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "100639",
+    "slug": "games",
+    "label": "Games"
+   }
+  ],
+  "markets": [
+   {
+    "id": "3625104",
+    "question": "Cincinnati Open: Jiri Lehecka vs Arthur Fils",
+    "slug": "atp-lehecka-fils-2026-08-17",
+    "outcomes": "[\"Jiri Lehecka\", \"Arthur Fils\"]",
+    "outcomePrices": "[\"0.095\", \"0.905\"]",
+    "volumeNum": 563394.2359480003,
+    "liquidityNum": 257475.2389,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "sportsMarketType": "moneyline",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625105",
+    "question": "Cincinnati Open: Completed Match: Jiri Lehecka vs Arthur Fils",
+    "slug": "atp-lehecka-fils-2026-08-17-completed-match",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.5\", \"0.5\"]",
+    "volumeNum": 55,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Completed Match",
+    "sportsMarketType": "tennis_completed_match",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625548",
+    "question": "Set 2 Winner: Lehecka vs Fils",
+    "slug": "atp-lehecka-fils-2026-08-17-set-2-winner-Lehecka-vs-Fils",
+    "outcomes": "[\"Lehecka\", \"Fils\"]",
+    "outcomePrices": "[\"0.575\", \"0.425\"]",
+    "volumeNum": 1939.5217509999998,
+    "liquidityNum": 1150.9518,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 2 Winner",
+    "sportsMarketType": "tennis_set_winner",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 2,
+    "updatedAt": "2026-08-18T02:24:07.615727Z"
+   },
+   {
+    "id": "3625547",
+    "question": "Set 1 Winner: Lehecka vs Fils",
+    "slug": "atp-lehecka-fils-2026-08-17-first-set-winner-Lehecka-vs-Fils",
+    "outcomes": "[\"Lehecka\", \"Fils\"]",
+    "outcomePrices": "[\"0\", \"1\"]",
+    "volumeNum": 196.350864,
+    "liquidityNum": 0,
+    "active": true,
+    "closed": true,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 1 Winner",
+    "sportsMarketType": "tennis_first_set_winner",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "updatedAt": "2026-08-18T02:02:29.634325Z"
+   },
+   {
+    "id": "3625549",
+    "question": "Jiri Lehecka vs. Arthur Fils: Total Sets O/U 2.5",
+    "slug": "atp-lehecka-fils-2026-08-17-set-totals-2pt5",
+    "outcomes": "[\"Over 2.5\", \"Under 2.5\"]",
+    "outcomePrices": "[\"0.265\", \"0.735\"]",
+    "volumeNum": 1805.163473,
+    "liquidityNum": 395.7434,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Total Sets: O/U 2.5",
+    "sportsMarketType": "tennis_set_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 2.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625550",
+    "question": "Lehecka vs. Fils: Set 1 Games O/U 8.5",
+    "slug": "atp-lehecka-fils-2026-08-17-first-set-total-8pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0\", \"1\"]",
+    "volumeNum": 26,
+    "liquidityNum": 0,
+    "active": true,
+    "closed": true,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 1 O/U 8.5",
+    "sportsMarketType": "tennis_first_set_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 8.5,
+    "updatedAt": "2026-08-18T02:02:29.882214Z"
+   },
+   {
+    "id": "3625551",
+    "question": "Lehecka vs. Fils: Match O/U 21.5",
+    "slug": "atp-lehecka-fils-2026-08-17-match-total-21pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.585\", \"0.415\"]",
+    "volumeNum": 4889.110117,
+    "liquidityNum": 136,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Match O/U 21.5",
+    "sportsMarketType": "tennis_match_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 21.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625552",
+    "question": "Lehecka vs. Fils: Set 2 Games O/U 8.5",
+    "slug": "atp-lehecka-fils-2026-08-17-set-2-total-8pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.51\", \"0.49\"]",
+    "liquidityNum": 2,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 2 O/U 8.5",
+    "sportsMarketType": "tennis_set_games_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 8.5,
+    "updatedAt": "2026-08-18T02:24:07.615727Z"
+   },
+   {
+    "id": "3625553",
+    "question": "Set Handicap: Fils (-1.5) vs Lehecka (+1.5)",
+    "slug": "atp-lehecka-fils-2026-08-17-set-handicap-away-1pt5",
+    "outcomes": "[\"Fils\", \"Lehecka\"]",
+    "outcomePrices": "[\"0.31\", \"0.69\"]",
+    "volumeNum": 18464.476161000006,
+    "liquidityNum": 85209.7318,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set Handicap +/-1.5",
+    "sportsMarketType": "tennis_set_handicap",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": -1.5,
+    "updatedAt": "2026-08-18T02:24:07.615727Z"
+   },
+   {
+    "id": "3625554",
+    "question": "Lehecka vs. Fils: Set 1 Games O/U 9.5",
+    "slug": "atp-lehecka-fils-2026-08-17-first-set-total-9pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0\", \"1\"]",
+    "liquidityNum": 0,
+    "active": true,
+    "closed": true,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 1 O/U 9.5",
+    "sportsMarketType": "tennis_first_set_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 9.5,
+    "updatedAt": "2026-08-18T02:02:30.439734Z"
+   },
+   {
+    "id": "3625555",
+    "question": "Lehecka vs. Fils: Match O/U 22.5",
+    "slug": "atp-lehecka-fils-2026-08-17-match-total-22pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.46\", \"0.54\"]",
+    "volumeNum": 1117.662908,
+    "liquidityNum": 2,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Match O/U 22.5",
+    "sportsMarketType": "tennis_match_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 22.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625556",
+    "question": "Lehecka vs. Fils: Set 2 Games O/U 9.5",
+    "slug": "atp-lehecka-fils-2026-08-17-set-2-total-9pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.505\", \"0.495\"]",
+    "liquidityNum": 1,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 2 O/U 9.5",
+    "sportsMarketType": "tennis_set_games_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 9.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3625557",
+    "question": "Lehecka vs. Fils: Set 1 Games O/U 10.5",
+    "slug": "atp-lehecka-fils-2026-08-17-first-set-total-10pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0\", \"1\"]",
+    "volumeNum": 58.509036,
+    "active": true,
+    "closed": true,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 1 O/U 10.5",
+    "sportsMarketType": "tennis_first_set_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 10.5,
+    "updatedAt": "2026-08-18T02:24:31.600906Z"
+   },
+   {
+    "id": "3625558",
+    "question": "Lehecka vs. Fils: Match O/U 23.5",
+    "slug": "atp-lehecka-fils-2026-08-17-match-total-23pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.605\", \"0.39\"]",
+    "volumeNum": 520,
+    "liquidityNum": 33.89,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Match O/U 23.5",
+    "sportsMarketType": "tennis_match_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 23.5,
+    "updatedAt": "2026-08-18T02:24:07.615727Z"
+   },
+   {
+    "id": "3625559",
+    "question": "Lehecka vs. Fils: Set 2 Games O/U 10.5",
+    "slug": "atp-lehecka-fils-2026-08-17-set-2-total-10pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.505\", \"0.495\"]",
+    "liquidityNum": 1,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Jiri Lehecka vs Arthur Fils Set 2 O/U 10.5",
+    "sportsMarketType": "tennis_set_games_totals",
+    "gameStartTime": "2026-08-18 01:15:00+00",
+    "line": 10.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   }
+  ]
+ },
+ {
+  "id": "856117",
+  "slug": "wta-eala-anisimo-2026-08-17",
+  "title": "Cincinnati Open: Alexandra Eala vs Amanda Anisimova",
+  "startDate": "2026-08-15T22:14:18Z",
+  "endDate": "2026-08-24T14:00:00Z",
+  "active": true,
+  "closed": false,
+  "live": true,
+  "tags": [
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   },
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "100639",
+    "slug": "games",
+    "label": "Games"
+   }
+  ],
+  "markets": [
+   {
+    "id": "3618042",
+    "question": "Cincinnati Open: Alexandra Eala vs Amanda Anisimova",
+    "slug": "wta-eala-anisimo-2026-08-17",
+    "outcomes": "[\"Alexandra Eala\", \"Amanda Anisimova\"]",
+    "outcomePrices": "[\"0.485\", \"0.515\"]",
+    "volumeNum": 266199.252322,
+    "liquidityNum": 311598.301,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "sportsMarketType": "moneyline",
+    "gameStartTime": "2026-08-18 02:15:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3618043",
+    "question": "Cincinnati Open: Completed Match: Alexandra Eala vs Amanda Anisimova",
+    "slug": "wta-eala-anisimo-2026-08-17-completed-match",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.5\", \"0.5\"]",
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Completed Match",
+    "sportsMarketType": "tennis_completed_match",
+    "gameStartTime": "2026-08-18 02:15:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3618747",
+    "question": "Alexandra Eala vs. Amanda Anisimova: Total Sets O/U 2.5",
+    "slug": "wta-eala-anisimo-2026-08-17-set-totals-2pt5",
+    "outcomes": "[\"Over 2.5\", \"Under 2.5\"]",
+    "outcomePrices": "[\"0.39\", \"0.61\"]",
+    "volumeNum": 500.587321,
+    "liquidityNum": 160.9994,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Alexandra Eala vs Amanda Anisimova Total Sets: O/U 2.5",
+    "sportsMarketType": "tennis_set_totals",
+    "gameStartTime": "2026-08-18 02:15:00+00",
+    "line": 2.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   },
+   {
+    "id": "3618765",
+    "question": "Eala vs. Anisimova: Match O/U 21.5",
+    "slug": "wta-eala-anisimo-2026-08-17-match-total-21pt5",
+    "outcomes": "[\"Over\", \"Under\"]",
+    "outcomePrices": "[\"0.555\", \"0.445\"]",
+    "volumeNum": 7790.029343,
+    "liquidityNum": 34085.7985,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T14:00:00Z",
+    "groupItemTitle": "Cincinnati Open: Alexandra Eala vs Amanda Anisimova Match O/U 21.5",
+    "sportsMarketType": "tennis_match_totals",
+    "gameStartTime": "2026-08-18 02:15:00+00",
+    "line": 21.5,
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   }
+  ]
+ },
+ {
+  "id": "851875",
+  "slug": "atp-doubles-cashgla-ramsali-2026-08-16",
+  "title": "Cincinnati Open (Doubles): Cash/Glasspool vs Ram/Salisbury",
+  "startDate": "2026-08-15T04:10:31Z",
+  "endDate": "2026-08-23T14:00:00Z",
+  "active": true,
+  "closed": false,
+  "tags": [
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   },
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "100639",
+    "slug": "games",
+    "label": "Games"
+   }
+  ],
+  "markets": [
+   {
+    "id": "3596079",
+    "question": "Cincinnati Open (Doubles): Cash/Glasspool vs Ram/Salisbury",
+    "slug": "atp-doubles-cashgla-ramsali-2026-08-16",
+    "outcomes": "[\"Cash/Glasspool\", \"Ram/Salisbury\"]",
+    "outcomePrices": "[\"0.795\", \"0.205\"]",
+    "volumeNum": 422.388689,
+    "liquidityNum": 905.5632,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-23T14:00:00Z",
+    "sportsMarketType": "moneyline",
+    "gameStartTime": "2026-08-16 14:00:00+00",
+    "updatedAt": "2026-08-18T02:28:06.561937Z"
+   },
+   {
+    "id": "3596080",
+    "question": "Cincinnati Open: Completed Match: Cash/Glasspool vs Ram/Salisbury",
+    "slug": "atp-doubles-cashgla-ramsali-2026-08-16-completed-match",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.5\", \"0.5\"]",
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-23T14:00:00Z",
+    "groupItemTitle": "Completed Match",
+    "sportsMarketType": "tennis_completed_match",
+    "gameStartTime": "2026-08-16 14:00:00+00",
+    "updatedAt": "2026-08-18T02:28:06.561937Z"
+   }
+  ]
+ },
+ {
+  "id": "139236",
+  "slug": "2026-mens-us-open-winner-tennis",
+  "title": "2026 Men’s US Open Winner (Tennis)",
+  "startDate": "2026-01-02T20:36:54.374167Z",
+  "endDate": "2026-09-13T00:00:00Z",
+  "active": true,
+  "closed": false,
+  "tags": [
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "101232",
+    "slug": "atp",
+    "label": "ATP"
+   },
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   }
+  ],
+  "markets": [
+   {
+    "id": "1088471",
+    "question": "Will Jannik Sinner win the 2026 Men's US Open?",
+    "slug": "will-jannik-sinner-win-the-2026-mens-us-open",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.425\", \"0.575\"]",
+    "volumeNum": 255772.8886539997,
+    "liquidityNum": 85668.6796,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-09-13T00:00:00Z",
+    "groupItemTitle": "Jannik Sinner",
+    "updatedAt": "2026-08-18T02:28:06.561937Z"
+   },
+   {
+    "id": "1088472",
+    "question": "Will Carlos Alcaraz win the 2026 Men's US Open?",
+    "slug": "will-carlos-alcaraz-win-the-2026-mens-us-open",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.12\", \"0.88\"]",
+    "volumeNum": 346582.74605,
+    "liquidityNum": 95239.3193,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-09-13T00:00:00Z",
+    "groupItemTitle": "Carlos Alcaraz",
+    "updatedAt": "2026-08-18T02:28:06.561937Z"
+   },
+   {
+    "id": "1088473",
+    "question": "Will Novak Djokovic win the 2026 Men's US Open?",
+    "slug": "will-novak-djokovic-win-the-2026-mens-us-open",
+    "outcomes": "[\"Yes\", \"No\"]",
+    "outcomePrices": "[\"0.0605\", \"0.9395\"]",
+    "volumeNum": 465015.57169,
+    "liquidityNum": 65755.37162,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-09-13T00:00:00Z",
+    "groupItemTitle": "Novak Djokovic",
+    "updatedAt": "2026-08-18T02:28:06.561937Z"
+   }
+  ]
+ },
+ {
+  "id": "856321",
+  "slug": "atp-moeller-ivanov-2026-08-17",
+  "title": "Roehampton: Elmer Moeller vs Ivan Ivanov",
+  "startDate": "2026-08-15T23:05:35Z",
+  "endDate": "2026-08-24T09:00:00Z",
+  "active": true,
+  "closed": false,
+  "tags": [
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   },
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "100639",
+    "slug": "games",
+    "label": "Games"
+   }
+  ],
+  "markets": [
+   {
+    "id": "3619233",
+    "question": "Roehampton: Elmer Moeller vs Ivan Ivanov",
+    "slug": "atp-moeller-ivanov-2026-08-17",
+    "outcomes": "[\"Elmer Moeller\", \"Ivan Ivanov\"]",
+    "outcomePrices": "[\"0.705\", \"0.295\"]",
+    "volumeNum": 70.659247,
+    "liquidityNum": 22780.2604,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T09:00:00Z",
+    "sportsMarketType": "moneyline",
+    "gameStartTime": "2026-08-18 13:00:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   }
+  ]
+ },
+ {
+  "id": "856299",
+  "slug": "atp-kuzmano-moelle-2026-08-17",
+  "title": "Sion: Dimitar Kuzmanov vs Marvin Moeller",
+  "startDate": "2026-08-15T23:05:19Z",
+  "endDate": "2026-08-24T08:00:00Z",
+  "active": true,
+  "closed": false,
+  "tags": [
+   {
+    "id": "864",
+    "slug": "tennis",
+    "label": "Tennis"
+   },
+   {
+    "id": "1",
+    "slug": "sports",
+    "label": "Sports"
+   },
+   {
+    "id": "100639",
+    "slug": "games",
+    "label": "Games"
+   }
+  ],
+  "markets": [
+   {
+    "id": "3619189",
+    "question": "Sion: Dimitar Kuzmanov vs Marvin Moeller",
+    "slug": "atp-kuzmano-moelle-2026-08-17",
+    "outcomes": "[\"Dimitar Kuzmanov\", \"Marvin Moeller\"]",
+    "outcomePrices": "[\"0.425\", \"0.575\"]",
+    "volumeNum": 400.738301,
+    "liquidityNum": 26376.2495,
+    "active": true,
+    "closed": false,
+    "endDate": "2026-08-24T08:00:00Z",
+    "sportsMarketType": "moneyline",
+    "gameStartTime": "2026-08-18 11:00:00+00",
+    "updatedAt": "2026-08-18T02:26:06.831718Z"
+   }
+  ]
+ }
+]
