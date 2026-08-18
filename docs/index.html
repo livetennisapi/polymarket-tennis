@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymarket Tennis Trading — Tools, Live Data &amp; Market Discovery</title>
+<meta name="description" content="Polymarket tennis trading toolkit: discover tennis event markets, match them to live tennis scores, and watch market prices in real time. Observe-only, MIT.">
+<link rel="canonical" href="https://livetennisapi.github.io/polymarket-tennis/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Polymarket Tennis Trading — Tools, Live Data &amp; Market Discovery">
+<meta property="og:description" content="The live-data layer for Polymarket tennis trading: market discovery, market-to-match identity resolution, and market prices joined to live scores. Observe-only, MIT.">
+<meta property="og:url" content="https://livetennisapi.github.io/polymarket-tennis/">
+<meta property="og:site_name" content="polymarket-tennis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Polymarket Tennis Trading — Tools, Live Data &amp; Market Discovery">
+<meta name="twitter:description" content="Polymarket tennis trading toolkit: discover tennis event markets, match them to live tennis matches, and watch market prices against live scores. Observe-only, MIT.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "polymarket-tennis",
+      "alternateName": "Polymarket tennis trading toolkit",
+      "description": "Polymarket tennis trading toolkit: discover tennis event markets via Polymarket's public Gamma API, match them to live tennis matches, and watch market prices against live scores. Observe-only — no order execution.",
+      "codeRepository": "https://github.com/livetennisapi/polymarket-tennis",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+",
+      "license": "https://opensource.org/licenses/MIT",
+      "url": "https://livetennisapi.github.io/polymarket-tennis/",
+      "author": {
+        "@type": "Organization",
+        "name": "Live Tennis API",
+        "url": "https://livetennisapi.com"
+      },
+      "keywords": "polymarket tennis trading, polymarket tennis api, tennis event markets, prediction markets, live tennis scores, gamma api"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you trade tennis on Polymarket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — tennis event markets exist and are numerous. On 2026-08-18 we counted 400+ open singles moneyline markets on Polymarket's public Gamma API across ATP, WTA, Challenger and ITF, alongside set-winner, games over/under and futures markets. Trading itself happens through Polymarket's own official interfaces; the polymarket-tennis toolkit only observes the markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a Polymarket tennis API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Polymarket's public Gamma API exposes tennis events and markets keyless — no account is needed to read prices. The polymarket-tennis toolkit wraps that API for the tennis category and pairs it with the Live Tennis API for the live-score side."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does polymarket-tennis place trades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is observe-only by design: no order execution, no wallet or key handling, no strategy advice. Execution is permanently out of scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does the free tier cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Live Tennis API free tier (30 requests/minute, 100 requests/day, no card) covers live scores with score, server and break-point state, players including each player's own current ranking, fixtures, and usage. That is everything the toolkit needs; market prices come from Polymarket's keyless Gamma API and do not touch the quota."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a2330;--muted:#5b6878;--accent:#0b6e4f;--accent-fg:#ffffff;
+  --card:#f4f6f8;--border:#dde3ea;--code-bg:#0f1720;--code-fg:#d7e0ea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1620;--fg:#e6ebf2;--muted:#9aa7b8;--accent:#3ecf8e;--accent-fg:#08110c;
+    --card:#161f2b;--border:#26313f;--code-bg:#0a0f16;--code-fg:#cfd9e4;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--fg);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  padding:0 1rem;
+}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 0 4rem}
+h1{font-size:1.9rem;line-height:1.25;margin-bottom:.75rem}
+h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-top:.5rem;border-top:1px solid var(--border)}
+h3{font-size:1.05rem;margin:1.5rem 0 .4rem}
+p{margin:0 0 1rem}
+a{color:var(--accent)}
+ul{margin:0 0 1rem 1.4rem}
+li{margin-bottom:.35rem}
+.lead{font-size:1.1rem;color:var(--muted)}
+.disclosure{
+  background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);
+  border-radius:6px;padding:.8rem 1rem;margin:1.25rem 0;font-size:.95rem;
+}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.badge{
+  display:inline-block;background:var(--card);border:1px solid var(--border);
+  border-radius:999px;padding:.15rem .8rem;font-size:.85rem;color:var(--muted);
+}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0}
+.btn{
+  display:inline-block;padding:.55rem 1.1rem;border-radius:8px;text-decoration:none;
+  font-weight:600;border:1px solid var(--accent);
+}
+.btn-primary{background:var(--accent);color:var(--accent-fg)}
+.btn-secondary{color:var(--accent)}
+pre{
+  background:var(--code-bg);color:var(--code-fg);border-radius:8px;
+  padding:1rem;overflow-x:auto;font-size:.85rem;line-height:1.55;margin:0 0 1rem;
+}
+code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+p code,li code{
+  background:var(--card);border:1px solid var(--border);border-radius:4px;
+  padding:.05rem .35rem;font-size:.88em;
+}
+table{border-collapse:collapse;margin:0 0 1rem;width:100%}
+th,td{border:1px solid var(--border);padding:.45rem .7rem;text-align:left;font-size:.92rem}
+th{background:var(--card)}
+.table-wrap{overflow-x:auto}
+dt{font-weight:600;margin-top:1.2rem}
+dd{margin:.25rem 0 0;color:var(--muted)}
+footer{
+  max-width:46rem;margin:0 auto;padding:1.5rem 0 3rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.9rem;
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Polymarket tennis trading, with live data you can trust</h1>
+  <p class="lead"><strong>polymarket-tennis</strong> is the live-data layer for
+  Polymarket tennis trading: discover tennis event markets, match each one to
+  the right live tennis match, and watch market prices against live scores —
+  score line, server, break-point flag — in one joined view.</p>
+
+  <div class="badges">
+    <span class="badge">Python 3.10+</span>
+    <span class="badge">MIT license</span>
+    <span class="badge">Observe-only</span>
+    <span class="badge">One dependency: httpx</span>
+  </div>
+
+  <p class="disclosure"><strong>Disclosure:</strong> this toolkit is built and
+  maintained by the team behind the
+  <a href="https://livetennisapi.com">Live Tennis API</a>. It joins
+  Polymarket's public market data with our live-score feed, so this is
+  vendor-authored tooling — judge accordingly.</p>
+
+  <p><strong>Observe-only by design.</strong> The package reads public market
+  data and live scores. It contains no order execution, no wallet or key
+  handling, and no strategy advice; execution is permanently out of scope.</p>
+
+  <pre><code>Cincinnati Open: Jiri Lehecka vs Arthur Fils  [atp-lehecka-fils-2026-08-17]
+  market: Jiri Lehecka 0.095 | Arthur Fils 0.905  (as of 12s ago)
+  live:   Jiri Lehecka vs Arthur Fils  4-6 3-4 (15-40)
+          serving: Jiri Lehecka  [BREAK POINT]  (as of 8s ago)</code></pre>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://github.com/livetennisapi/polymarket-tennis">View on GitHub</a>
+    <a class="btn btn-secondary" href="https://livetennisapi.com/subscribe/free">Free Live Tennis API key</a>
+  </div>
+
+  <h2 id="markets">Tennis on Polymarket is a real category</h2>
+  <p>On 2026-08-18 we counted <strong>400+ open singles moneyline markets</strong>
+  on Polymarket's public <a href="https://gamma-api.polymarket.com">Gamma API</a>
+  across ATP, WTA, Challenger and ITF events — plus set-winner, games
+  over/under and futures markets alongside them. The Gamma API is keyless:
+  no account is needed to read prices.</p>
+
+  <h2 id="what">What the toolkit does</h2>
+  <ul>
+    <li><strong>Discover</strong> — find current tennis markets via the Gamma
+    API: the <code>tennis</code> tag, per-match events
+    (<code>atp-lehecka-fils-2026-08-17</code>), futures, doubles; normalized to
+    plain Python objects (question, outcomes, prices, volume, end date).</li>
+    <li><strong>Match</strong> — pair a market with a Live Tennis API
+    match/fixture using player-name + date heuristics with an explicit
+    confidence score. Handles reversed name order, diacritics
+    ("Báez" = "Baez"), shared surnames, and retirement/walkover wording. On
+    ambiguity it returns <code>None</code> — it never guesses silently.</li>
+    <li><strong>Watch</strong> — one <code>LiveMarketView</code> snapshot
+    holding the market question and outcome prices next to the live score
+    line, server, break-point flag, and set/game state, with staleness
+    timestamps for both feeds.</li>
+  </ul>
+
+  <h2 id="quickstart">Quickstart</h2>
+  <pre><code>pip install "polymarket-tennis @ git+https://github.com/livetennisapi/polymarket-tennis"
+
+# 1. list current tennis markets — keyless, Gamma only
+pmtennis discover --matches-only --moneyline-only
+
+# 2. get a free Live Tennis API key (livetennisapi.com/subscribe/free)
+export LIVETENNIS_API_KEY=ltapi_...
+
+# 3. inspect the matching decision for one market
+pmtennis match atp-lehecka-fils-2026-08-17
+
+# 4. watch market price vs live match state, one poll per minute
+pmtennis watch atp-lehecka-fils-2026-08-17</code></pre>
+
+  <h2 id="bot">Building a Polymarket tennis trading bot on top of this</h2>
+  <p>To be clear about the boundary: <strong>this toolkit is the data layer,
+  not a bot.</strong> It never places orders and never will. What it gives a
+  Polymarket tennis trading bot is the part that is genuinely fiddly —
+  reliable market discovery, market-to-match identity resolution that refuses
+  to guess, and a joined market-price/live-score snapshot with staleness
+  timestamps — so your own code can focus on whatever decisions it makes.
+  Everything downstream of the <code>LiveMarketView</code> (signals,
+  execution, risk) is yours to build, with Polymarket's own official
+  interfaces, and none of it lives here.</p>
+
+  <h2 id="budget">Free-tier budget math (honest numbers)</h2>
+  <p>The Live Tennis API free tier allows <strong>30 requests/minute and 100
+  requests/day</strong> and includes live scores (score/server/state), players
+  (with each player's own current ranking), fixtures, and usage.
+  <code>pmtennis watch</code> spends 1 Live Tennis API request per poll — the
+  market price comes from Gamma, which is keyless and doesn't touch the
+  quota:</p>
+  <div class="table-wrap">
+    <table>
+      <tr><th>cadence</th><th>requests/hour</th><th>free-key watching per day</th></tr>
+      <tr><td>60 s (default)</td><td>60</td><td>~100 minutes</td></tr>
+      <tr><td>300 s</td><td>12</td><td>~8 hours</td></tr>
+    </table>
+  </div>
+  <p>So the free tier comfortably covers developing, testing, and following a
+  handful of tracked matches at a gentle cadence — it is not sized for
+  continuous fast polling of many matches. Paid tiers add completed-match
+  history and point-by-point (Basic), match events, market prices and bulk
+  packages (Pro), and win probability and in-play stats (Ultra) — details at
+  <a href="https://livetennisapi.com">livetennisapi.com</a>.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <dl>
+    <dt>Can you trade tennis on Polymarket?</dt>
+    <dd>Yes — tennis event markets exist and are numerous. On 2026-08-18 we
+    counted 400+ open singles moneyline markets on Polymarket's public Gamma
+    API across ATP, WTA, Challenger and ITF, alongside set-winner, games
+    over/under and futures markets. Trading itself happens through
+    Polymarket's own official interfaces; this toolkit only observes the
+    markets.</dd>
+    <dt>Is there a Polymarket tennis API?</dt>
+    <dd>Polymarket's public Gamma API exposes tennis events and markets
+    keyless — no account needed to read prices. This toolkit wraps that API
+    for the tennis category and pairs it with the Live Tennis API for the
+    live-score side.</dd>
+    <dt>Does this place trades?</dt>
+    <dd>No. It is observe-only: no order execution, no wallet or key
+    handling, no strategy advice. Execution is permanently out of scope.</dd>
+    <dt>What data does the free tier cover?</dt>
+    <dd>The Live Tennis API free tier (30 req/min, 100 req/day, no card)
+    covers live scores with score/server/break-point state, players including
+    each player's own current ranking, fixtures, and usage. That is
+    everything this toolkit needs.</dd>
+  </dl>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="https://github.com/livetennisapi/polymarket-tennis">Source, docs &amp; issues on GitHub</a>
+  </div>
+</main>
+<footer>
+  <p>polymarket-tennis is MIT-licensed and observe-only. Built by the team
+  behind <a href="https://livetennisapi.com">livetennisapi.com</a> —
+  <a href="https://docs.livetennisapi.com">API documentation</a> ·
+  <a href="https://livetennisapi.com/subscribe/free">free API key</a>.</p>
+</footer>
+</body>
+</html>
