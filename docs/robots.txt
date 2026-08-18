@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://livetennisapi.github.io/polymarket-tennis/sitemap.xml
