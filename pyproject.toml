@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "polymarket-tennis"
+version = "0.1.0"
+description = "Observe tennis event markets on Polymarket next to live match state from the Live Tennis API. Discovery, matching, joined view — observe-only."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+keywords = ["tennis", "polymarket", "prediction-markets", "live-scores", "sports-data"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = ["httpx>=0.24"]
+
+[project.urls]
+Homepage = "https://github.com/livetennisapi/polymarket-tennis"
+Documentation = "https://docs.livetennisapi.com"
+Issues = "https://github.com/livetennisapi/polymarket-tennis/issues"
+
+[project.scripts]
+pmtennis = "polymarket_tennis.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/polymarket_tennis"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

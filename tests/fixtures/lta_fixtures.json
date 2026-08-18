@@ -1,0 +1,41 @@
+{
+ "data": [
+  {
+   "id": 70001,
+   "event_date": "2026-08-18",
+   "start_time": "2026-08-18T15:00:00Z",
+   "player1_id": 60101,
+   "player2_id": 60102,
+   "tour": "wta",
+   "tournament": "Cincinnati Open",
+   "round": "Round of 16",
+   "round_code": "R16",
+   "surface": "hard",
+   "player1_name": "Alexandra Eala",
+   "player2_name": "Amanda Anisimova",
+   "status": "upcoming"
+  },
+  {
+   "id": 70002,
+   "event_date": "2026-08-19",
+   "start_time": null,
+   "player1_id": 60201,
+   "player2_id": 60202,
+   "tour": "atp",
+   "tournament": "Cincinnati Open",
+   "round": "Quarterfinal",
+   "round_code": "QF",
+   "surface": "hard",
+   "player1_name": "Carlos Alcaraz",
+   "player2_name": "Jannik Sinner",
+   "status": "upcoming"
+  }
+ ],
+ "meta": {
+  "limit": 50,
+  "offset": 0,
+  "count": 2,
+  "total": 2,
+  "has_more": false
+ }
+}
