@@ -70,6 +70,8 @@ break-point flag, and set/game state, with staleness timestamps for
 ## Install
 
 ```bash
+pip install polymarket-tennis
+# or from source:
 pip install "polymarket-tennis @ git+https://github.com/livetennisapi/polymarket-tennis"
 ```
 
