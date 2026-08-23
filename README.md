@@ -150,6 +150,50 @@ Polymarket's public Gamma API. The Live Tennis API's own market-prices and
 win-probability fields are paid-tier features and are **not required** by
 anything here.
 
+## Vibe-code a tennis market watcher with Claude Code (or Cursor)
+
+No experience needed. Get a free key, open Claude Code in an empty folder,
+and paste this one prompt. It builds an **observe-only, paper-trading**
+watcher on top of this toolkit — it cannot place orders, because nothing in
+this package can.
+
+```text
+Build me a Python tennis market watcher on top of the `polymarket-tennis`
+package (pip install polymarket-tennis; docs: https://github.com/livetennisapi/polymarket-tennis).
+Requirements:
+1. Use GammaClient + discover_tennis_markets(market_types={"moneyline"}, matches_only=True)
+   to list open Polymarket tennis markets, and LiveTennisClient (key from the env var
+   LIVETENNIS_API_KEY; free key at https://livetennisapi.com/subscribe/free) to fetch
+   lta.live_matches() + lta.fixtures().
+2. For each market call match_market(market, candidates); skip None (never guess).
+3. Build view = build_view(market, decision.match) and, once per minute (free tier:
+   30 req/min, 100 req/day — stay under it), log: market question, both outcome prices,
+   the live score line, who is serving, the break-point flag, and both staleness ages.
+4. Keep a local JSON "paper book": when the favourite is facing a break point, record a
+   PAPER entry {time, market, side, price}; when the game resolves, record the price
+   move. Paper only — print a loud banner that no real orders are ever sent.
+5. If the match's `outcome` becomes "retired" or "walkover" print the venue's own
+   settlement text from the market `description` (do NOT hard-code a payout rule).
+6. Add a README, a requirements.txt, and tests that run offline with fixtures.
+Observe-only. No wallets, no keys other than the tennis API key, no order code.
+```
+
+The prompt transcript, what came out, and the free-tier budget it respects are
+written up in [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot).
+
+## Guides
+
+- [Can you trade tennis on Polymarket? (2026)](https://blog.livetennisapi.com/blog/can-you-trade-tennis-on-polymarket)
+- [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot) — the pillar walkthrough
+- [Find tennis markets with the Gamma API](https://blog.livetennisapi.com/blog/polymarket-tennis-markets-gamma-api)
+- [Match a Polymarket market to a live match](https://blog.livetennisapi.com/blog/match-polymarket-market-to-live-tennis)
+- [Polymarket API for tennis: Gamma, CLOB & live scores](https://blog.livetennisapi.com/blog/polymarket-api-tennis-data)
+- [Free live tennis scores for a trading bot](https://blog.livetennisapi.com/blog/free-live-tennis-scores-trading-bot)
+- [Polymarket & Kalshi tennis retirement/walkover rules, verbatim (2026)](https://blog.livetennisapi.com/blog/polymarket-kalshi-tennis-retirement-walkover-rules) — walkover = 50-50 on polymarket.com, last fair price on Polymarket US (ITF $0.50), fair price on Kalshi (ITF $0.50)
+- [Tennis retirements & walkovers on prediction markets](https://blog.livetennisapi.com/blog/polymarket-tennis-retirement-walkover)
+- [Data-driven tennis trading signals (not advice)](https://blog.livetennisapi.com/blog/polymarket-tennis-trading-strategy)
+- [How to build a Kalshi tennis trading bot](https://blog.livetennisapi.com/blog/kalshi-tennis-trading-bot)
+
 ## FAQ
 
 **Can you trade tennis on Polymarket?**
