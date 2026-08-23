@@ -186,7 +186,6 @@ without a key. Its README lists the honest deviations (e.g. the prompt's
 watcher self-caps at 96 requests and documents `--interval 300`). The
 write-up is in [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot).
 
-<<<<<<< ours
 ## Tennis Bot Arena (paper-only)
 
 A strategy leaderboard built on the toolkit: write a Python file with an
@@ -196,7 +195,7 @@ wallets; entrants never receive raw venue prices, only scores. Season 1 is
 the US Open 2026. Rules, data-handling constraints and the CLI
 (`pmtennis arena replay|record`) are in [docs/ARENA.md](docs/ARENA.md).
 The only committed tape is clearly synthetic.
-=======
+
 ## Claude Code skill
 
 An [Agent Skill](https://agentskills.io) for this package lives at
@@ -212,7 +211,6 @@ npx skills add livetennisapi/polymarket-tennis
 
 It is also bundled in the [livetennisapi-mcp](https://github.com/livetennisapi/livetennisapi-mcp)
 Claude Code plugin.
->>>>>>> theirs
 
 ## Guides
 
