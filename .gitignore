@@ -6,3 +6,7 @@ build/
 .venv/
 .pytest_cache/
 .ruff_cache/
+
+# arena: real tapes stay with the organisers (docs/ARENA.md)
+tape/*.jsonl
+!tape/synthetic_*.jsonl

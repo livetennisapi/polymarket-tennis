@@ -186,6 +186,16 @@ without a key. Its README lists the honest deviations (e.g. the prompt's
 watcher self-caps at 96 requests and documents `--interval 300`). The
 write-up is in [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot).
 
+## Tennis Bot Arena (paper-only)
+
+A strategy leaderboard built on the toolkit: write a Python file with an
+`on_view(view, book)` method, replay it over a recorded tape of market +
+live-score snapshots, and get ranked by **paper** P&L. No orders, no
+wallets; entrants never receive raw venue prices, only scores. Season 1 is
+the US Open 2026. Rules, data-handling constraints and the CLI
+(`pmtennis arena replay|record`) are in [docs/ARENA.md](docs/ARENA.md).
+The only committed tape is clearly synthetic.
+
 ## Guides
 
 - [Can you trade tennis on Polymarket? (2026)](https://blog.livetennisapi.com/blog/can-you-trade-tennis-on-polymarket)

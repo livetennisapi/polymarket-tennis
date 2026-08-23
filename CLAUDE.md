@@ -19,5 +19,9 @@ Hard boundaries — do not cross them when extending this repo or building on it
 - **Tests are offline.** Fixtures under `tests/fixtures/` are trimmed real captures; add
   fixtures, never live calls, when adding tests. Run `ruff check src tests && pytest`.
 
+- **Arena (`src/polymarket_tennis/arena/`) is paper-only.** Strategies only get a
+  `LiveMarketView` and a `PaperBook`. Real tapes are organiser data and are never
+  committed or redistributed; the one committed tape is synthetic. See docs/ARENA.md.
+
 Useful entry points: `GammaClient`, `LiveTennisClient`, `discover_tennis_markets`,
-`match_market`, `build_view`; CLI `pmtennis discover|match|watch`.
+`match_market`, `build_view`; CLI `pmtennis discover|match|watch|arena`.
