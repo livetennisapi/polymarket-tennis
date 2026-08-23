@@ -244,8 +244,44 @@ pmtennis watch atp-lehecka-fils-2026-08-17</code></pre>
   packages (Pro), and win probability and in-play stats (Ultra) — details at
   <a href="https://livetennisapi.com">livetennisapi.com</a>.</p>
 
+  <h2 id="rules">Retirement &amp; walkover settlement rules (verbatim, 2026-08-23)</h2>
+  <p>Three venues, three rule sets. Quoted from the venues' own text on
+  <a href="rules.html">the rules page</a> and, in depth, in
+  <a href="https://blog.livetennisapi.com/blog/polymarket-kalshi-tennis-retirement-walkover-rules">Polymarket &amp; Kalshi tennis retirement/walkover rules (2026)</a>.</p>
+  <table>
+    <thead><tr><th>Scenario</th><th>Polymarket (polymarket.com)</th><th>Polymarket US</th><th>Kalshi ATP/WTA</th><th>Kalshi ITF</th></tr></thead>
+    <tbody>
+      <tr><td>Walkover / withdrawal before the match starts</td><td>50-50</td><td>Last fair market price</td><td>Fair price per rules</td><td>$0.50</td></tr>
+      <tr><td>Retirement after play starts</td><td>Advancing player wins</td><td>Winner settles $1.00</td><td>Winner = Yes</td><td>Winner = Yes; withdrawer = No</td></tr>
+      <tr><td>What counts as "started"</td><td>"the match begins"</td><td>First serve struck</td><td>A ball has been played</td><td>A ball has been played</td></tr>
+    </tbody>
+  </table>
+  <p>Your code should read the rule from the market (<code>description</code> on Gamma,
+  <code>rules_secondary</code> on Kalshi) and detect the branch from the feed's
+  <code>outcome</code> / <code>event_status</code> fields — never hard-code a payout.</p>
+
+  <h2 id="guides">Guides</h2>
+  <ul>
+    <li><a href="https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot">Build a Polymarket tennis trading bot (Python)</a> — includes the one-prompt Claude Code build and its verified output</li>
+    <li><a href="https://blog.livetennisapi.com/blog/can-you-trade-tennis-on-polymarket">Can you trade tennis on Polymarket? (2026)</a></li>
+    <li><a href="https://blog.livetennisapi.com/blog/polymarket-api-tennis-data">Polymarket API for tennis: Gamma, CLOB &amp; live scores</a></li>
+    <li><a href="https://blog.livetennisapi.com/blog/polymarket-tennis-markets-gamma-api">Find tennis markets with the Gamma API</a></li>
+    <li><a href="https://blog.livetennisapi.com/blog/match-polymarket-market-to-live-tennis">Match a Polymarket market to a live match</a></li>
+    <li><a href="https://blog.livetennisapi.com/blog/kalshi-tennis-live-scores-method">Kalshi tennis: live scores, series tickers &amp; API</a> · <a href="https://blog.livetennisapi.com/blog/kalshi-tennis-trading-bot">Kalshi tennis trading bot</a></li>
+    <li><a href="https://blog.livetennisapi.com/blog/polymarket-tennis-trading-strategy">Data-driven tennis trading signals (not advice)</a></li>
+  </ul>
+
+  <h2 id="more">Skill, Arena, latency harness</h2>
+  <ul>
+    <li><strong>Claude Code skill</strong> — <code>npx skills add livetennisapi/polymarket-tennis</code> (also bundled in the <a href="https://github.com/livetennisapi/livetennisapi-mcp">livetennisapi-mcp</a> plugin).</li>
+    <li><strong>Tennis Bot Arena</strong> — a paper-only strategy leaderboard (<code>pmtennis arena replay|record</code>); rules in <a href="https://github.com/livetennisapi/polymarket-tennis/blob/main/docs/ARENA.md">docs/ARENA.md</a>. Season 1: US Open 2026.</li>
+    <li><strong>latency-bench</strong> — <a href="https://github.com/livetennisapi/latency-bench">measurement harness</a> for "who sees the point first" (score feeds vs market repricing). Harness only; no numbers published yet.</li>
+  </ul>
+
   <h2 id="faq">FAQ</h2>
   <dl>
+    <dt>What happens on Polymarket if a tennis player retires or there is a walkover?</dt>
+    <dd>On polymarket.com a mid-match retirement resolves to the player who advances and a pre-start walkover resolves 50-50; Polymarket US settles a pre-serve walkover at the last fair market price (ITF $0.50); Kalshi at a fair price (ITF $0.50). See the <a href="rules.html">verbatim rules</a>.</dd>
     <dt>Can you trade tennis on Polymarket?</dt>
     <dd>Yes — tennis event markets exist and are numerous. On 2026-08-18 we
     counted 400+ open singles moneyline markets on Polymarket's public Gamma

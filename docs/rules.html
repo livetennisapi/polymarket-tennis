@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polymarket &amp; Kalshi Tennis Retirement / Walkover Rules (2026, verbatim)</title>
+<meta name="description" content="How Polymarket, Polymarket US and Kalshi settle a tennis market on a retirement, walkover or cancellation — quoted verbatim from each venue on 2026-08-23, with the live-data fields that detect each branch.">
+<link rel="canonical" href="https://livetennisapi.github.io/polymarket-tennis/rules.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Polymarket &amp; Kalshi Tennis Retirement / Walkover Rules (2026)">
+<meta property="og:description" content="The live-data layer for Polymarket tennis trading: market discovery, market-to-match identity resolution, and market prices joined to live scores. Observe-only, MIT.">
+<meta property="og:url" content="https://livetennisapi.github.io/polymarket-tennis/rules.html">
+<meta property="og:site_name" content="polymarket-tennis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Polymarket Tennis Trading — Tools, Live Data &amp; Market Discovery">
+<meta name="twitter:description" content="Polymarket tennis trading toolkit: discover tennis event markets, match them to live tennis matches, and watch market prices against live scores. Observe-only, MIT.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "polymarket-tennis",
+      "alternateName": "Polymarket tennis trading toolkit",
+      "description": "Polymarket tennis trading toolkit: discover tennis event markets via Polymarket's public Gamma API, match them to live tennis matches, and watch market prices against live scores. Observe-only — no order execution.",
+      "codeRepository": "https://github.com/livetennisapi/polymarket-tennis",
+      "programmingLanguage": "Python",
+      "runtimePlatform": "Python 3.10+",
+      "license": "https://opensource.org/licenses/MIT",
+      "url": "https://livetennisapi.github.io/polymarket-tennis/rules.html",
+      "author": {
+        "@type": "Organization",
+        "name": "Live Tennis API",
+        "url": "https://livetennisapi.com"
+      },
+      "keywords": "polymarket tennis trading, polymarket tennis api, tennis event markets, prediction markets, live tennis scores, gamma api"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you trade tennis on Polymarket?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — tennis event markets exist and are numerous. On 2026-08-18 we counted 400+ open singles moneyline markets on Polymarket's public Gamma API across ATP, WTA, Challenger and ITF, alongside set-winner, games over/under and futures markets. Trading itself happens through Polymarket's own official interfaces; the polymarket-tennis toolkit only observes the markets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a Polymarket tennis API?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Polymarket's public Gamma API exposes tennis events and markets keyless — no account is needed to read prices. The polymarket-tennis toolkit wraps that API for the tennis category and pairs it with the Live Tennis API for the live-score side."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does polymarket-tennis place trades?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is observe-only by design: no order execution, no wallet or key handling, no strategy advice. Execution is permanently out of scope."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What data does the free tier cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Live Tennis API free tier (30 requests/minute, 100 requests/day, no card) covers live scores with score, server and break-point state, players including each player's own current ranking, fixtures, and usage. That is everything the toolkit needs; market prices come from Polymarket's keyless Gamma API and do not touch the quota."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg:#ffffff;--fg:#1a2330;--muted:#5b6878;--accent:#0b6e4f;--accent-fg:#ffffff;
+  --card:#f4f6f8;--border:#dde3ea;--code-bg:#0f1720;--code-fg:#d7e0ea;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1620;--fg:#e6ebf2;--muted:#9aa7b8;--accent:#3ecf8e;--accent-fg:#08110c;
+    --card:#161f2b;--border:#26313f;--code-bg:#0a0f16;--code-fg:#cfd9e4;
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--fg);
+  font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  padding:0 1rem;
+}
+main{max-width:46rem;margin:0 auto;padding:2.5rem 0 4rem}
+h1{font-size:1.9rem;line-height:1.25;margin-bottom:.75rem}
+h2{font-size:1.35rem;margin:2.5rem 0 .75rem;padding-top:.5rem;border-top:1px solid var(--border)}
+h3{font-size:1.05rem;margin:1.5rem 0 .4rem}
+p{margin:0 0 1rem}
+a{color:var(--accent)}
+ul{margin:0 0 1rem 1.4rem}
+li{margin-bottom:.35rem}
+.lead{font-size:1.1rem;color:var(--muted)}
+.disclosure{
+  background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);
+  border-radius:6px;padding:.8rem 1rem;margin:1.25rem 0;font-size:.95rem;
+}
+.badges{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.5rem}
+.badge{
+  display:inline-block;background:var(--card);border:1px solid var(--border);
+  border-radius:999px;padding:.15rem .8rem;font-size:.85rem;color:var(--muted);
+}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.5rem 0}
+.btn{
+  display:inline-block;padding:.55rem 1.1rem;border-radius:8px;text-decoration:none;
+  font-weight:600;border:1px solid var(--accent);
+}
+.btn-primary{background:var(--accent);color:var(--accent-fg)}
+.btn-secondary{color:var(--accent)}
+pre{
+  background:var(--code-bg);color:var(--code-fg);border-radius:8px;
+  padding:1rem;overflow-x:auto;font-size:.85rem;line-height:1.55;margin:0 0 1rem;
+}
+code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+p code,li code{
+  background:var(--card);border:1px solid var(--border);border-radius:4px;
+  padding:.05rem .35rem;font-size:.88em;
+}
+table{border-collapse:collapse;margin:0 0 1rem;width:100%}
+th,td{border:1px solid var(--border);padding:.45rem .7rem;text-align:left;font-size:.92rem}
+th{background:var(--card)}
+.table-wrap{overflow-x:auto}
+dt{font-weight:600;margin-top:1.2rem}
+dd{margin:.25rem 0 0;color:var(--muted)}
+footer{
+  max-width:46rem;margin:0 auto;padding:1.5rem 0 3rem;border-top:1px solid var(--border);
+  color:var(--muted);font-size:.9rem;
+}
+</style>
+</head>
+<body>
+<main>
+  <p><a href="./">← polymarket-tennis</a></p>
+  <h1>Polymarket &amp; Kalshi tennis retirement / walkover rules — verbatim (retrieved 2026-08-23)</h1>
+  <p>Not advice. Rules are set per market and change; the market's own text always wins. Full write-up with code:
+  <a href="https://blog.livetennisapi.com/blog/polymarket-kalshi-tennis-retirement-walkover-rules">blog.livetennisapi.com</a>.</p>
+
+  <h2 id="matrix">Settlement matrix</h2>
+  <table>
+    <thead><tr><th>Scenario</th><th>Polymarket (polymarket.com)</th><th>Polymarket US (docs.polymarket.us)</th><th>Kalshi ATP/WTA</th><th>Kalshi ITF</th></tr></thead>
+    <tbody>
+      <tr><td>Walkover / withdrawal <strong>before</strong> the match starts</td><td><strong>50-50</strong></td><td><strong>Last fair market price</strong> at announcement</td><td><strong>Fair price</strong> per rules</td><td><strong>$0.50</strong> per contract</td></tr>
+      <tr><td>Match cancelled, not played</td><td>50-50</td><td>Last fair market price</td><td>Fair price per rules</td><td>$0.50</td></tr>
+      <tr><td><strong>Retirement after play starts</strong> (injury, default, DQ)</td><td>Advancing player wins</td><td>Awarded winner settles <strong>$1.00</strong></td><td>Winner resolves <strong>Yes</strong></td><td>Winner Yes; withdrawing/forfeiting player <strong>No</strong></td></tr>
+      <tr><td>Delayed / postponed</td><td>50-50 if beyond 7 days with no winner</td><td>— (see venue FAQ)</td><td>Stays open, closes after rescheduled match (within two weeks)</td><td>Same</td></tr>
+      <tr><td>What counts as "started"</td><td>"the match begins"</td><td><strong>First serve is struck</strong></td><td><strong>A ball has been played</strong></td><td>A ball has been played</td></tr>
+    </tbody>
+  </table>
+
+  <h2 id="polymarket">Polymarket (polymarket.com) — from the market description (Gamma API, event <code>atp-norrie-navone-2026-05-20</code>)</h2>
+  <blockquote><p>If the match is canceled (not played at all), ends in a tie, or is delayed beyond 7 days from the scheduled date without a winner determined, this market will resolve to 50-50.</p>
+  <p>If the match begins but is not completed, and one player advances due to the opponent's retirement, default, or disqualification, this market will resolve to the player who advances.</p>
+  <p>If the match ends in a walkover (player withdraws before the start and the other advances automatically), this market will resolve to 50-50.</p></blockquote>
+
+  <h2 id="polymarket-us">Polymarket US — <a href="https://docs.polymarket.us/faqs/sports-faqs">docs.polymarket.us/faqs/sports-faqs</a>, "Tennis (WTA, ATP, &amp; ITF)"</h2>
+  <blockquote><p><strong>When does a match officially begin?</strong> A tennis match officially begins when the first serve is struck. Anything happening before the first serve (cancellation, walkover, withdrawal) is treated as a pre-event scenario and Contracts settle at last fair market prices as of the official announcement. Except in the case of ITF Men's and Women's matches, cancellation, walkover, or withdrawal will resolve at $0.50 per Contract.</p>
+  <p><strong>Mid-match retirement, default, or disqualification.</strong> If a player retires after the first serve, defaults for a code violation, or is disqualified, the market resolves on the official result declared by the governing body. Whoever is awarded the win settles at $1.00, regardless of how many games or sets were completed.</p></blockquote>
+
+  <h2 id="kalshi">Kalshi — per-market <code>rules_secondary</code> (<code>KXATPMATCH</code> / <code>KXITFMATCH</code>, public API)</h2>
+  <blockquote><p>ATP/WTA: If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).</p>
+  <p>ITF: … all markets will resolve to $0.50. If a player withdraws or forfeits after a match has started, that player will resolve to No.</p></blockquote>
+
+  <h2 id="detect">Detecting each branch in live data</h2>
+  <p>In the Live Tennis API each match carries <code>outcome</code> (<code>completed</code>, <code>retired</code>, <code>walkover</code>, <code>default</code>, <code>abandoned</code>; <code>null</code> until settled), <code>event_status</code> (<code>Retired</code>, <code>Walk Over</code>, <code>Cancelled</code>, <code>Postponed</code>, <code>Interrupted</code>) and <code>withdrew</code>. The lifecycle <code>status</code> only says upcoming/live/completed/cancelled. The <a href="https://github.com/livetennisapi/polymarket-tennis">polymarket-tennis</a> toolkit joins the market to the match so the venue's own rule text sits next to the live state.</p>
+</main>
+<footer>
+  <p>polymarket-tennis is MIT-licensed and observe-only. Built by the team behind <a href="https://livetennisapi.com">livetennisapi.com</a>.</p>
+</footer>
+</body>
+</html>
