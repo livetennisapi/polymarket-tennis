@@ -1,0 +1,4 @@
+polymarket-tennis>=0.1.0
+httpx>=0.24
+pytest>=7
+ruff>=0.4

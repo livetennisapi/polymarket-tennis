@@ -178,8 +178,13 @@ Requirements:
 Observe-only. No wallets, no keys other than the tennis API key, no order code.
 ```
 
-The prompt transcript, what came out, and the free-tier budget it respects are
-written up in [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot).
+What that prompt produced, unedited except for lint, is checked in at
+[`examples/claude-code-watcher/`](examples/claude-code-watcher/) — 7 offline
+tests, `ruff` clean, and a `--once --fixtures` dry run so you can see it work
+without a key. Its README lists the honest deviations (e.g. the prompt's
+"once a minute" costs 2 requests per poll, which exceeds 100/day, so the
+watcher self-caps at 96 requests and documents `--interval 300`). The
+write-up is in [Build a Polymarket tennis trading bot (Python)](https://blog.livetennisapi.com/blog/build-polymarket-tennis-trading-bot).
 
 ## Guides
 
