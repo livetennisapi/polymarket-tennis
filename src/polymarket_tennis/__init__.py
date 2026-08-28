@@ -11,12 +11,15 @@ from .join import LiveMarketView, build_view, derive_break_point, score_line
 from .livetennis import LiveTennisClient
 from .matching import MatchDecision, extract_market_players, match_market
 from .models import TennisMarket
+from .providers import LiveScoreProvider, StaticLiveScoreProvider
 
 __version__ = "0.1.0"
 
 __all__ = [
     "GammaClient",
     "LiveTennisClient",
+    "LiveScoreProvider",
+    "StaticLiveScoreProvider",
     "TennisMarket",
     "MatchDecision",
     "LiveMarketView",

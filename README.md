@@ -124,6 +124,31 @@ own code can focus on whatever decisions it makes. Everything downstream of
 the `LiveMarketView` (signals, execution, risk) is yours to build, with
 Polymarket's own official interfaces, and none of it lives here.
 
+### Swap in a different live-score source
+
+The matching and view code operates on plain dicts, never on a client, so the
+only place the pipeline touches a live-score source is a small four-method
+surface captured by the `LiveScoreProvider` protocol: `live_matches()`,
+`matches()`, `fixtures()`, and `match(match_id)`. `LiveTennisClient` is the
+default implementation and satisfies it out of the box; to feed the matcher and
+view from somewhere else, implement those four methods (returning dicts in the
+same shape — `players.p1.name`/`players.p2.name`, `score`, `status`, `id`) and
+hand your object to the same `_load_candidates`/`_decide` helpers. A worked,
+network-free implementation ships as `StaticLiveScoreProvider`, which the
+offline tests use:
+
+```python
+from polymarket_tennis import StaticLiveScoreProvider, match_market
+from polymarket_tennis.cli import _load_candidates
+
+provider = StaticLiveScoreProvider(live=[...], fixtures=[...])  # your own dicts
+decision = match_market(market, _load_candidates(provider))
+```
+
+This keeps `match_market()` and `build_view()` independent of any one provider
+and makes offline testing a matter of preloading a few dicts — no key, no
+network. (Thanks to #1 and #2 for raising the coupling.)
+
 ### Free-tier budget math (honest numbers)
 
 The Live Tennis API free tier allows **30 requests/minute and 100
