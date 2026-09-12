@@ -34,6 +34,7 @@ from .join import build_view
 from .livetennis import LiveTennisClient, MissingAPIKeyError
 from .matching import MatchDecision, match_market, score_candidates
 from .models import TennisMarket
+from .providers import LiveScoreProvider
 
 MIN_INTERVAL = 30.0  # seconds; keeps polling polite on every tier
 
@@ -78,7 +79,7 @@ def _load_market(id_or_slug: str) -> TennisMarket | None:
         return find_market(gamma, id_or_slug)
 
 
-def _load_candidates(lta: LiveTennisClient) -> list[dict[str, Any]]:
+def _load_candidates(lta: LiveScoreProvider) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = list(lta.live_matches())
     candidates.extend(lta.matches(status="upcoming"))
     candidates.extend(lta.fixtures())
@@ -87,7 +88,7 @@ def _load_candidates(lta: LiveTennisClient) -> list[dict[str, Any]]:
 
 def _decide(
     market: TennisMarket,
-    lta: LiveTennisClient,
+    lta: LiveScoreProvider,
     override: int | None,
 ) -> tuple[MatchDecision | None, list[dict[str, Any]]]:
     candidates = _load_candidates(lta)
