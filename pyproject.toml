@@ -9,7 +9,7 @@ description = "Observe tennis event markets on Polymarket next to live match sta
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+authors = [{ name = "Synapse Research Ltd", email = "hello@livetennisapi.com" }]
 keywords = ["tennis", "polymarket", "prediction-markets", "live-scores", "sports-data"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -27,6 +27,7 @@ dependencies = ["httpx>=0.24"]
 Homepage = "https://github.com/livetennisapi/polymarket-tennis"
 Documentation = "https://docs.livetennisapi.com"
 Issues = "https://github.com/livetennisapi/polymarket-tennis/issues"
+Author = "https://synapsereality.io"
 
 [project.scripts]
 pmtennis = "polymarket_tennis.cli:main"
