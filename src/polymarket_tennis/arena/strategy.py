@@ -17,7 +17,7 @@ Mark-to-market convention (deliberately simple and stated once):
 * When the tape's last line carries a completed match with a ``winner``, the
   winning outcome marks at 1.0 and the other at 0.0. Retirements, walkovers
   and any other non-``completed`` outcome are NOT settled here: the venue's
-  own rule decides those and we never hard-code it (see CLAUDE.md), so such
+  own rule decides those and we never hard-code it (see CONTRIBUTING.md), so such
   entries stay marked at the last observed price.
 """
 
