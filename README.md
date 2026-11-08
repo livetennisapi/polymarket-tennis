@@ -75,7 +75,7 @@ pip install polymarket-tennis
 pip install "polymarket-tennis @ git+https://github.com/livetennisapi/polymarket-tennis"
 ```
 
-Python 3.10+. Single runtime dependency: `httpx`.
+Python 3.11+. Single runtime dependency: `httpx`.
 
 ## Quickstart
 

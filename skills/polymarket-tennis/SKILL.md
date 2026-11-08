@@ -2,7 +2,7 @@
 name: polymarket-tennis
 description: Build observe-only Polymarket and Kalshi tennis market tooling on the polymarket-tennis Python package (MIT) plus the Live Tennis API free tier. Use when asked for a Polymarket tennis bot or market watcher, a Kalshi tennis trading bot, tennis prediction-market data, Gamma API tennis markets, matching a market to a live match, break-point or serving state next to market prices, or how a tennis retirement, walkover, or cancelled match settles (venue rule text, never hard-coded). Covers the real package API (GammaClient, LiveTennisClient, discover_tennis_markets, match_market, build_view, pmtennis CLI), the free-tier request budget (30/min, 100/day), the outcome and event_status fields, and the verbatim 2026 settlement matrix. No order execution, wallets, or strategy advice.
 license: MIT
-compatibility: Python 3.10+, pip install polymarket-tennis (single runtime dependency httpx). Live match data needs a free Live Tennis API key in LIVETENNIS_API_KEY; Polymarket Gamma and Kalshi market reads are keyless.
+compatibility: Python 3.11+, pip install polymarket-tennis (single runtime dependency httpx). Live match data needs a free Live Tennis API key in LIVETENNIS_API_KEY; Polymarket Gamma and Kalshi market reads are keyless.
 metadata:
   author: Live Tennis API (hello@livetennisapi.com)
   version: "0.1.0"
@@ -49,7 +49,7 @@ metadata:
 ## Quick start
 
 ```bash
-pip install polymarket-tennis          # Python 3.10+, depends only on httpx
+pip install polymarket-tennis          # Python 3.11+, depends only on httpx
 pmtennis discover --matches-only --moneyline-only   # keyless, Gamma only
 export LIVETENNIS_API_KEY=ltapi_...    # free, no card: https://livetennisapi.com/subscribe/free
 pmtennis match atp-lehecka-fils-2026-08-17          # show the pairing decision + confidence

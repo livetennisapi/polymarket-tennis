@@ -41,7 +41,7 @@ pip install -e ".[dev]"
 ruff check src tests && pytest
 ```
 
-CI runs the same two commands on Python 3.10 and 3.12.
+CI runs the same two commands on Python 3.11, 3.12 and 3.13.
 
 ## Where to start reading
 
